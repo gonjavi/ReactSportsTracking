@@ -5,14 +5,9 @@ import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import 'react-circular-progressbar/dist/styles.css';
 
-const Homes = styled.nav`
-  height: 700px;
-  font-family: Helvetica Neue Light;
-  background-color: #f3f3f6;
-`;
 const Date = styled.div`
   width: 100%;
-  height: 200px;
+  height: 150px;
   padding: 20px;
   background-color: white;
   text-align: center;
