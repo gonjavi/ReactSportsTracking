@@ -6,7 +6,8 @@ import { bindActionCreators } from 'redux';
 import { fetchProducts } from '../actions/index';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import SportList from './SportList';
+import Home from '../components/Home';
+import Username from '../components/Username';
 import { getProductsError, getProducts } from '../reducers/data';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -28,7 +29,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, error } = this.props;
+    const { error } = this.props;
     if (!this.shouldComponentRender()) return <div>Loading</div>;
     return (
       <div className="App">
@@ -36,7 +37,7 @@ class App extends React.Component {
         <Navbar />
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={() => <SportList />} />
+            <Route exact path="/" component={Username} />
           </Switch>
         </BrowserRouter>
         <Footer />

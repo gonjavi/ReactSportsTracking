@@ -1,8 +1,14 @@
+html {
+  height: 100%;
+}
 body {
   margin: 0;
+  background-color: #fdfdfd;
+  position: fixed;
+  min-height: 100%;
+  width: 100%;
   font-family:
     -apple-system,
-    BlinkMacSystemFont,
     'Segoe UI',
     'Roboto',
     'Oxygen',
@@ -14,6 +20,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+ 
 }
 
 code {
@@ -25,3 +33,15 @@ code {
     'Courier New',
     monospace;
 }
+
+h1, p {
+  font-family: Helvetica Neue Light;
+}
+
+div.col {
+  padding: 0;
+}
+div.container {
+  padding: 0;
+}
+
