@@ -27,8 +27,15 @@ function fetchProductsError(error) {
 function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsPending());
-    axios.get('https://trackingapi-gon.herokuapp.com/api/v1/sports.json')
-    /* fetch('https://trackingapi-gon.herokuapp.com/') */
+    axios.get('http://localhost:3001/api/v1/sports.json',
+      {
+        headers: {
+          'content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH',
+          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+        },
+      })
       .then(res => res.json())
       .then(res => {
         if (res.error) {

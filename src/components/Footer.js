@@ -39,7 +39,7 @@ const Footer = () => {
                 <img
                   alt="one"
                   width="40%"
-                  height="20%"
+                  height="40%"
                   src={one}
                 />
               </NavLink>
@@ -49,7 +49,7 @@ const Footer = () => {
                 <img
                   alt="one"
                   width="40%"
-                  height="20%"
+                  height="40%"
                   src={two}
                 />
               </Link>
@@ -58,7 +58,7 @@ const Footer = () => {
               <img
                 alt="one"
                 width="40%"
-                height="20%"
+                height="40%"
                 src={three}
               />
             </Col>
@@ -66,7 +66,7 @@ const Footer = () => {
               <img
                 alt="one"
                 width="40%"
-                height="20%"
+                height="40%"
                 src={more}
               />
             </Col>

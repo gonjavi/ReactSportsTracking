@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Circle = styled.div`
   height: 200px;
@@ -40,6 +41,7 @@ const Space2 = styled.div`
 const IntroduceMeasurement = () => {
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
+  const [measurement, setMeasurement] = useState(false);
 
   function toggle() {
     setIsActive(!isActive);
@@ -48,6 +50,16 @@ const IntroduceMeasurement = () => {
   function reset() {
     setSeconds(0);
     setIsActive(false);
+  }
+
+  function toDateTime(secs) {
+    const time = new Date(1970, 0, 1); // Epoch
+    time.setSeconds(secs);
+    return time;
+  }
+
+  function saveToApi() {
+    setMeasurement(true);
   }
 
   useEffect(() => {
@@ -61,6 +73,31 @@ const IntroduceMeasurement = () => {
     }
     return () => clearInterval(interval);
   }, [isActive, seconds]);
+
+  useEffect(() => {
+    if (measurement) {
+      axios.post(
+        'http://localhost:3001/api/v1/measurements',
+        {
+          time: toDateTime(seconds),
+          date: Date(),
+          sport_id: 6,
+        },
+        {
+          headers: {
+            'content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH',
+          },
+        },
+      )
+        .then(response => {
+          console.log(response);
+        }, error => {
+          console.log(error);
+        });
+    }
+  }, [measurement]);
 
   return (
     <Container>
@@ -88,7 +125,7 @@ const IntroduceMeasurement = () => {
           </Button>
         </Col>
         <Col xs={3}>
-          <Button type="button">
+          <Button type="button" onClick={saveToApi}>
             Save
           </Button>
         </Col>
