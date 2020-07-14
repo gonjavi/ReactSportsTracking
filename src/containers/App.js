@@ -8,7 +8,8 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Home from '../components/Home';
 import Username from '../components/Username';
-import Measurements from '../components/Measurements';
+import Measurements from './Measurements';
+import IntroduceMeasurement from '../components/IntroduceMeasurement';
 import { getProductsError, getProducts } from '../reducers/data';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -38,9 +39,9 @@ class App extends React.Component {
         <Navbar />
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Username} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/measurements" component={Measurements} />
+            <Route exact path="/" component={IntroduceMeasurement} />
+            <Route path="/home" component={Home} />
+            <Route path="/measurements" component={Measurements} />
           </Switch>
         </BrowserRouter>
         <Footer />

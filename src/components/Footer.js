@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link, NavLink, BrowserRouter } from 'react-router-dom';
 import one from '../img/one1.png';
 import two from '../img/two2.png';
 import three from '../img/three3.png';
 import more from '../img/more.png';
-
 
 const Footer1 = styled.div`
 position: fixed;
@@ -33,46 +32,46 @@ const Footer = () => {
   return (
     <Footer1>
       <BrowserRouter>
-      <Container>
-        <Row>
-          <Col>
-            <Link to="/measurements">
+        <Container>
+          <Row>
+            <Col>
+              <NavLink to="/measurements">
+                <img
+                  alt="one"
+                  width="40%"
+                  height="20%"
+                  src={one}
+                />
+              </NavLink>
+            </Col>
+            <Col>
+              <Link to="/home">
+                <img
+                  alt="one"
+                  width="40%"
+                  height="20%"
+                  src={two}
+                />
+              </Link>
+            </Col>
+            <Col>
               <img
                 alt="one"
                 width="40%"
                 height="20%"
-                src={one}
+                src={three}
               />
-            </Link>
-          </Col>
-          <Col>
-            <Link to="/home">
+            </Col>
+            <Col>
               <img
                 alt="one"
                 width="40%"
                 height="20%"
-                src={two}
+                src={more}
               />
-            </Link>
-          </Col>
-          <Col>
-            <img
-              alt="one"
-              width="40%"
-              height="20%"
-              src={three}
-            />
-          </Col>
-          <Col>
-            <img
-              alt="one"
-              width="40%"
-              height="20%"
-              src={more}
-            />
-          </Col>
-        </Row>
-      </Container>
+            </Col>
+          </Row>
+        </Container>
       </BrowserRouter>
     </Footer1>
   );

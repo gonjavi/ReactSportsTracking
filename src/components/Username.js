@@ -19,7 +19,7 @@ const Username = () => {
       <Row>
         <Col xs={12}>
           <Date> 7 July 2020 </Date>
-        </Col> 
+        </Col>
       </Row>
       <Row>
         <Col xs={{ span: 3, offset: 3 }}>
