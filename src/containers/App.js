@@ -40,8 +40,9 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Username} />
-            <Route path="/home" component={Home} />
+            <Route exact path="/home" component={Home} />
             <Route path="/measurements" component={Measurements} />
+            <Route path="/measurement/:id" component={IntroduceMeasurement} />
           </Switch>
         </BrowserRouter>
         <Footer />

@@ -41,11 +41,15 @@ const Space2 = styled.div`
 `;
 
 const IntroduceMeasurement = props => {
-  const { sportId } = props;
-
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [measurement, setMeasurement] = useState(false);
+
+  const {
+    match,
+  } = props;
+  const { params } = match;
+  const { id } = params;
 
   function toggle() {
     setIsActive(!isActive);
@@ -78,41 +82,38 @@ const IntroduceMeasurement = props => {
     return () => clearInterval(interval);
   }, [isActive, seconds]);
 
-  useEffect(() => {
+  useEffect(() => dispatch => {
     if (measurement) {
-      return dispatch => {
-        axios.post(
-          'https://trackingapi-gon.herokuapp.com/api/v1/measurements',
-          {
-            time: toDateTime(seconds),
-            date: Date(),
-            sport_id: sportId,
+      axios.post(
+        'https://trackingapi-gon.herokuapp.com/api/v1/measurements',
+        {
+          time: toDateTime(seconds),
+          date: Date(),
+          sport_id: id,
+        },
+        {
+          headers: {
+            'content-type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH',
           },
-          {
-            headers: {
-              'content-type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH',
-            },
-          },
-        )
-          .then(res => {
-            if (res.error) {
-              throw (res.error);
-            }
-            return res;
-          }).catch(error => {
-            dispatch(fetchProductsError(error));
-          });
-      };
+        },
+      )
+        .then(res => {
+          if (res.error) {
+            throw (res.error);
+          }
+          return res;
+        }).catch(error => {
+          dispatch(fetchProductsError(error));
+        });
     }
-    return true;
-  }, [measurement]);
+  }, [measurement, seconds, id]);
 
   return (
     <Container>
       <Space>
-        <h6>Add measure</h6>
+        <h6>Add measurement</h6>
       </Space>
       <Row>
         <Col xs={{ span: 3, offset: 3 }}>
@@ -146,7 +147,11 @@ const IntroduceMeasurement = props => {
 };
 
 IntroduceMeasurement.propTypes = {
-  sportId: PropTypes.number.isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
 };
 
 export default IntroduceMeasurement;

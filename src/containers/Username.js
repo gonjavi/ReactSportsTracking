@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,11 +19,18 @@ const Date = styled.div`
 
 const Username = props => {
   const [username, setUsername] = useState('');
+  const [error, setError] = useState(false);
+  const [redirect, setRedirect] = useState(false);
 
   const handleSubmit = evt => {
     evt.preventDefault();
     const { addUsername } = props;
-    addUsername(username);
+    if (username === '') {
+      setError(true);
+    } else {
+      addUsername(username);
+      setRedirect(true);
+    }
   };
 
   return (
@@ -42,9 +50,13 @@ const Username = props => {
                 value={username}
                 onChange={e => setUsername(e.target.value)}
               />
+              {error === true
+                && <span>Please add your username</span>}
             </label>
             <input type="submit" value="Sign In" />
           </form>
+          {redirect === true
+            && <Redirect to="home" /> }
         </Col>
       </Row>
     </Container>
