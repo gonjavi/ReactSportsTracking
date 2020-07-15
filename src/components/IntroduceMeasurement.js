@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import axios from 'axios';
+import { fetchProductsError } from '../actions/index';
 
 const Circle = styled.div`
   height: 200px;
@@ -38,7 +40,9 @@ const Space2 = styled.div`
   padding-top: 20px;
 `;
 
-const IntroduceMeasurement = () => {
+const IntroduceMeasurement = props => {
+  const { sportId } = props;
+
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const [measurement, setMeasurement] = useState(false);
@@ -76,27 +80,33 @@ const IntroduceMeasurement = () => {
 
   useEffect(() => {
     if (measurement) {
-      axios.post(
-        'http://localhost:3001/api/v1/measurements',
-        {
-          time: toDateTime(seconds),
-          date: Date(),
-          sport_id: 6,
-        },
-        {
-          headers: {
-            'content-type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH',
+      return dispatch => {
+        axios.post(
+          'https://trackingapi-gon.herokuapp.com/api/v1/measurements',
+          {
+            time: toDateTime(seconds),
+            date: Date(),
+            sport_id: sportId,
           },
-        },
-      )
-        .then(response => {
-          console.log(response);
-        }, error => {
-          console.log(error);
-        });
+          {
+            headers: {
+              'content-type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH',
+            },
+          },
+        )
+          .then(res => {
+            if (res.error) {
+              throw (res.error);
+            }
+            return res;
+          }).catch(error => {
+            dispatch(fetchProductsError(error));
+          });
+      };
     }
+    return true;
   }, [measurement]);
 
   return (
@@ -133,6 +143,10 @@ const IntroduceMeasurement = () => {
       </Row>
     </Container>
   );
+};
+
+IntroduceMeasurement.propTypes = {
+  sportId: PropTypes.number.isRequired,
 };
 
 export default IntroduceMeasurement;

@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import styled from 'styled-components';
+import IntroduceMeasurement from './IntroduceMeasurement';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Homes = styled.nav`
@@ -71,7 +72,11 @@ const Home = () => {
         </Progress>
         <Row>
           <Col sm={6} xs={6} className="sport">
-            <Sport>Jogging</Sport>
+            <Sport>
+              <IntroduceMeasurement sportId={1}>
+                Cycling
+              </IntroduceMeasurement>
+            </Sport>
             <Sport>Jogging</Sport>
             <Sport>Jogging</Sport>
           </Col>

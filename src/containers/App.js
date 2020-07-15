@@ -7,7 +7,7 @@ import { fetchProducts } from '../actions/index';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Home from '../components/Home';
-import Username from '../components/Username';
+import Username from './Username';
 import Measurements from './Measurements';
 import IntroduceMeasurement from '../components/IntroduceMeasurement';
 import { getProductsError, getProducts } from '../reducers/data';
@@ -31,7 +31,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { error } = this.props;
+    const { data, error } = this.props;
     if (!this.shouldComponentRender()) return <div>Loading</div>;
     return (
       <div className="App">
@@ -39,7 +39,7 @@ class App extends React.Component {
         <Navbar />
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={IntroduceMeasurement} />
+            <Route exact path="/" component={Username} />
             <Route path="/home" component={Home} />
             <Route path="/measurements" component={Measurements} />
           </Switch>
