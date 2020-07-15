@@ -45,3 +45,9 @@ div.container {
   padding: 0;
 }
 
+.middle {
+  vertical-align: middle;
+  padding-top: 18px;
+  padding-left: 20px;
+}
+

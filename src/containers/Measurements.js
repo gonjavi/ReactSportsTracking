@@ -10,7 +10,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 const Homes = styled.nav`
   height: 700px;
-  font-family: Helvetica Neue Light;
+  font-family: Helvetica-Neue-Light;
   background-color: #f3f3f6;
 `;
 
@@ -44,7 +44,7 @@ margin-right: auto;
 
 const Measurements = props => {
   const { data } = props;
-  console.log(data.data);
+  // console.log(data.data);
   return (
     <Homes>
       <Container>

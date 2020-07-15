@@ -10,6 +10,7 @@ import Home from '../components/Home';
 import Username from './Username';
 import Measurements from './Measurements';
 import IntroduceMeasurement from '../components/IntroduceMeasurement';
+import AdminPanel from './AdminPanel';
 import { getProductsError, getProducts } from '../reducers/data';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -43,6 +44,7 @@ class App extends React.Component {
             <Route exact path="/home" component={Home} />
             <Route path="/measurements" component={Measurements} />
             <Route path="/measurement/:id" component={IntroduceMeasurement} />
+            <Route path="/admin" component={AdminPanel} />
           </Switch>
         </BrowserRouter>
         <Footer />
