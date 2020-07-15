@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -40,7 +42,9 @@ margin-left: auto;
 margin-right: auto;
 `;
 
-const Measurements = () => {
+const Measurements = props => {
+  const { data } = props;
+  console.log(data.data);
   return (
     <Homes>
       <Container>
@@ -135,4 +139,16 @@ const Measurements = () => {
   );
 };
 
-export default Measurements;
+Measurements.defaultProps = {
+  data: {},
+};
+
+Measurements.propTypes = {
+  data: PropTypes.objectOf(PropTypes.any),
+};
+
+const mapStateToProps = state => ({
+  data: state.data,
+});
+
+export default connect(mapStateToProps)(Measurements);
