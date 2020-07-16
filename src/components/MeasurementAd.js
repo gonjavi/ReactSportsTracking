@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Block = styled.div`
   height: 60px;
@@ -13,12 +14,14 @@ const Block = styled.div`
   margin-bottom: 10px;
 `;
 const MeasurementAd = props => {
+  const [remove, setRemove] = useState(false);
   const {
     sport,
     time,
     date,
     id,
   } = props;
+  console.log(id);
   let sportName;
   switch (sport) {
     case 1:
@@ -49,6 +52,21 @@ const MeasurementAd = props => {
   const day = date1.getDay();
   const m = d.getMinutes();
   const s = d.getSeconds();
+
+  function deleteMeasurement() {
+    setRemove(true);
+  }
+  useEffect(() => () => {
+    axios.delete(`https://trackingapi-gon.herokuapp.com/api/v1/measurements/${id}`)
+      .then(res => {
+        if (res.error) {
+          throw (res.error);
+        }
+        return res;
+      }).catch(error => {
+        console.log(error);
+      });
+  }, [remove, id]);
   return (
     <Block>
       <Container>
@@ -67,7 +85,7 @@ const MeasurementAd = props => {
             {s}
           </Col>
           <Col className="text-center">
-            <button type="button">Delete</button>
+            <button type="button" onClick={deleteMeasurement}>Delete</button>
           </Col>
         </Row>
       </Container>

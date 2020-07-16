@@ -21,11 +21,11 @@ const Title = styled.h3`
 `;
 
 const AdminPanel = props => {
-  const { 
+  const {
     sports: {
-      data
-    }
-  } = props; 
+      data,
+    },
+  } = props;
   const sportMeasure = data.map(
     s => (
       <MeasurementAd
