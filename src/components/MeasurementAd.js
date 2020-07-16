@@ -38,7 +38,7 @@ const MeasurementAd = props => {
       sportName = 'Walking';
       break;
     case 5:
-      sportName = 'Weight Lifting"';
+      sportName = 'Weight Lifting';
       break;
     case 6:
       sportName = 'Treadmill-workout';
@@ -46,11 +46,12 @@ const MeasurementAd = props => {
     default:
       sportName = '';
   }
+  console.log(date)
   const d = new Date(time);
   const date1 = new Date(date);
   const y = date1.getFullYear();
-  const month = date1.getMonth();
-  const day = date1.getDay();
+  const month = date1.getMonth() + 1;
+  const day = date1.getDate();
   const m = d.getMinutes();
   const s = d.getSeconds();
 
@@ -63,7 +64,7 @@ const MeasurementAd = props => {
         if (res.error) {
           throw (res.error);
         }
-        fetchProducts();
+        // fetchProducts();
         window.location.reload(false);
         return res;
       }).catch(error => error);
@@ -74,11 +75,11 @@ const MeasurementAd = props => {
         <Row className="middle">
           <Col>{sportName}</Col>
           <Col>
-            {y}
+            {day}
             -
             {month}
             -
-            {day}
+            {y}
           </Col>
           <Col xs={2}>
             {m}
