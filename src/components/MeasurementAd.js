@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import axios from 'axios';
+import { fetchProducts } from '../actions/index';
 
 const Block = styled.div`
   height: 60px;
@@ -62,10 +63,10 @@ const MeasurementAd = props => {
         if (res.error) {
           throw (res.error);
         }
+        fetchProducts();
+        window.location.reload(false);
         return res;
-      }).catch(error => {
-        console.log(error);
-      });
+      }).catch(error => error);
   }, [remove, id]);
   return (
     <Block>

@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import MeasurementAd from '../components/MeasurementAd';
 
 const Homes = styled.nav`
-  height: auto;
+  
   font-family: Helvetica-Neue-Light;
   background-color: #f3f3f6;
 `;
