@@ -19,11 +19,35 @@ const MeasurementAd = props => {
     date,
     id,
   } = props;
+  let sportName;
+  switch (sport) {
+    case 1:
+      sportName = 'Cycling';
+      break;
+    case 2:
+      sportName = 'Jogging';
+      break;
+    case 3:
+      sportName = 'Swimming';
+      break;
+    case 4:
+      sportName = 'Walking';
+      break;
+    case 5:
+      sportName = 'Weight Lifting"';
+      break;
+    case 6:
+      sportName = 'Treadmill-workout';
+      break;
+    default:
+      sportName = '';
+  }
+
   return (
     <Block>
       <Container>
         <Row className="middle">
-          <Col>{sport}</Col>
+          <Col>{sportName}</Col>
           <Col>{date}</Col>
           <Col xs={2}>{time}</Col>
           <Col>
@@ -36,10 +60,10 @@ const MeasurementAd = props => {
 };
 
 MeasurementAd.propTypes = {
-  sport: PropTypes.string.isRequired,
+  sport: PropTypes.number.isRequired,
   time: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default MeasurementAd;
