@@ -42,15 +42,31 @@ const MeasurementAd = props => {
     default:
       sportName = '';
   }
-
+  const d = new Date(time);
+  const date1 = new Date(date);
+  const y = date1.getFullYear();
+  const month = date1.getMonth();
+  const day = date1.getDay();
+  const m = d.getMinutes();
+  const s = d.getSeconds();
   return (
     <Block>
       <Container>
         <Row className="middle">
           <Col>{sportName}</Col>
-          <Col>{date}</Col>
-          <Col xs={2}>{time}</Col>
           <Col>
+            {y}
+            -
+            {month}
+            -
+            {day}
+          </Col>
+          <Col xs={2}>
+            {m}
+            :
+            {s}
+          </Col>
+          <Col className="text-center">
             <button type="button">Delete</button>
           </Col>
         </Row>

@@ -46,6 +46,12 @@ const AdminPanel = props => {
             <Title>Admin Panel</Title>
           </Col>
         </Row>
+        <Row className="text-center">
+          <Col>Sport</Col>
+          <Col>Date</Col>
+          <Col>Time</Col>
+          <Col>Delete</Col>
+        </Row>
       </Container>
       {sportMeasure}
     </Homes>
