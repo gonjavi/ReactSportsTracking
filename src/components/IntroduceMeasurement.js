@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import axios from 'axios';
-import { fetchProductsError } from '../actions/index';
 
 const Circle = styled.div`
   height: 200px;
@@ -58,16 +57,21 @@ const IntroduceMeasurement = props => {
   function reset() {
     setSeconds(0);
     setIsActive(false);
-  }
-
-  function toDateTime(secs) {
-    const time = new Date(1970, 0, 1); // Epoch
-    time.setSeconds(secs);
-    return time;
+    setMeasurement(false);
   }
 
   function saveToApi() {
     setMeasurement(true);
+  }
+
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    if (seconds < 10) {
+      seconds = `0${seconds}`;
+    }
+    return `${minutes}:${seconds}`;
   }
 
   useEffect(() => {
@@ -82,12 +86,12 @@ const IntroduceMeasurement = props => {
     return () => clearInterval(interval);
   }, [isActive, seconds]);
 
-  useEffect(() => dispatch => {
+  useEffect(() => {
     if (measurement) {
       axios.post(
-        'https://trackingapi-gon.herokuapp.com/api/v1/measurements',
+        'http://localhost:3001/api/v1/measurements',
         {
-          time: toDateTime(seconds),
+          time: formatTime(seconds),
           date: Date(),
           sport_id: id,
         },
@@ -103,10 +107,9 @@ const IntroduceMeasurement = props => {
           if (res.error) {
             throw (res.error);
           }
+          window.location.reload(false);
           return res;
-        }).catch(error => {
-          dispatch(fetchProductsError(error));
-        });
+        }).catch(error => error);
     }
   }, [measurement, seconds, id]);
 

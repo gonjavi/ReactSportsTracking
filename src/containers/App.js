@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchProducts } from '../actions/index';
+import { fetchProducts , fetchProgress } from '../actions/index';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Home from '../components/Home';
@@ -22,7 +22,9 @@ class App extends React.Component {
 
   componentDidMount() {
     const { fetchProducts } = this.props;
+    const { fetchProgress } = this.props;
     fetchProducts();
+    fetchProgress();
   }
 
   shouldComponentRender() {
@@ -32,7 +34,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, error } = this.props;
+    const { error } = this.props;
     if (!this.shouldComponentRender()) return <div>Loading</div>;
     return (
       <div className="App">
@@ -57,9 +59,9 @@ App.defaultProps = {
   pending: true,
 };
 App.propTypes = {
-  data: PropTypes.objectOf(PropTypes.any).isRequired,
   error: PropTypes.string,
   fetchProducts: PropTypes.func.isRequired,
+  fetchProgress: PropTypes.func.isRequired,
   pending: PropTypes.bool,
 };
 
@@ -71,6 +73,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchProducts,
+  fetchProgress,
 }, dispatch);
 
 export default connect(

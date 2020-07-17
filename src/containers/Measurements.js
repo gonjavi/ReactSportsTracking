@@ -43,8 +43,28 @@ margin-right: auto;
 `;
 
 const Measurements = props => {
-  const { data } = props;
-  // console.log(data.data);
+  const {
+    sports: {
+      data,
+    },
+  } = props;
+
+  const today = new Date();
+  const yesterday = new Date(today);
+  const thisWeek = new Date(today);
+
+  yesterday.setDate(yesterday.getDate() - 1);
+  thisWeek.setDate(thisWeek.getDate() - 8);
+
+  // today.toDateString();
+  yesterday.toDateString();
+
+  const sportMeasure = data.filter(
+    s => (s.attributes.date),
+  );
+  // console.log(today);
+  // console.log(yesterday);
+  console.log(sportMeasure)
   return (
     <Homes>
       <Container>
@@ -140,15 +160,15 @@ const Measurements = props => {
 };
 
 Measurements.defaultProps = {
-  data: {},
+  sports: {},
 };
 
 Measurements.propTypes = {
-  data: PropTypes.objectOf(PropTypes.any),
+  sports: PropTypes.objectOf(PropTypes.any),
 };
 
 const mapStateToProps = state => ({
-  data: state.data,
+  sports: state.data,
 });
 
 export default connect(mapStateToProps)(Measurements);

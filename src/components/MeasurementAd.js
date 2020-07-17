@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import axios from 'axios';
-import { fetchProducts } from '../actions/index';
 
 const Block = styled.div`
   height: 60px;
@@ -22,7 +21,6 @@ const MeasurementAd = props => {
     date,
     id,
   } = props;
-  console.log(id);
   let sportName;
   switch (sport) {
     case 1:
@@ -46,7 +44,6 @@ const MeasurementAd = props => {
     default:
       sportName = '';
   }
-  console.log(date)
   const d = new Date(time);
   const date1 = new Date(date);
   const y = date1.getFullYear();
@@ -64,7 +61,6 @@ const MeasurementAd = props => {
         if (res.error) {
           throw (res.error);
         }
-        // fetchProducts();
         window.location.reload(false);
         return res;
       }).catch(error => error);
