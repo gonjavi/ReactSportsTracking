@@ -42,6 +42,15 @@ You will also see any lint errors in the console.
 - Github: [@gonjavi](https://github.com/gonjavi)
 - Linkedin: [@g-javier-mancilla](https://www.linkedin.com/in/g-mancillla)
 
+## Future Updates/Improvements
+
+Add the following characteristics:
+
+- Improve the user interface for medium and big screens (responsiveness)
+- Improve the section measurements and check the progress of it within time
+- Add update measurements characteritic.
+- Allow to create new sports to measure.
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
