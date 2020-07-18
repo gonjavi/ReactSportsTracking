@@ -41,7 +41,7 @@ const Username = props => {
         </Col>
       </Row>
       <Row>
-        <Col xs={{ span: 4, offset: 3 }}>
+        <Col xs={{ span: 4, offset: 3 }} md={{ span: 4, offset: 5 }}>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">
               Type your username:
