@@ -28,7 +28,7 @@ const Footer = () => (
   <Footer1>
     <Container>
       <Row>
-        <Col>
+        <Col xs={3} lg={{ span: 2, offset: 2 }}>
           <a href="/admin">
             <img
               alt="one"
@@ -38,7 +38,7 @@ const Footer = () => (
             />
           </a>
         </Col>
-        <Col>
+        <Col xs={3} lg={2}>
           <a href="/home">
             <img
               alt="one"
@@ -48,7 +48,7 @@ const Footer = () => (
             />
           </a>
         </Col>
-        <Col>
+        <Col xs={3} lg={2}>
           <a href="/measurements">
             <img
               alt="one"
@@ -58,7 +58,7 @@ const Footer = () => (
             />
           </a>
         </Col>
-        <Col>
+        <Col xs={3} lg={2}>
           <a href="/">
             <img
               alt="one"

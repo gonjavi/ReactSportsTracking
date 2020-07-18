@@ -3,17 +3,6 @@ body {
   height: 100%;
 }
 
-#root {
-  min-height: 100%;
-  margin-bottom: -330px;
-  position: relative;
-}
-
-#footer {
-  height: 330px;
-  position: relative;
-}
-
 body {
   margin: 0;
   background-color: #fdfdfd;
