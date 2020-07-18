@@ -1,7 +1,9 @@
 ## React-Redux Capstone Project
 This is part of the front-end part of the sports tracking mobile app capstone project built together with the [Ruby on Rails Api](https://github.com/gonjavi/railsSportsTrack).
 
-![screenshot](./src/img/screenshot1.png)  ![screenshot](./src/img/screenshot2.png)
+![screenshot](./src/img/screenshot1.png)  
+
+![screenshot](./src/img/screenshot2.png)
 
 
 
