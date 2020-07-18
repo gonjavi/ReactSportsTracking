@@ -51,7 +51,7 @@ You will also see any lint errors in the console.
 
 Add the following characteristics:
 
-- Improve the user interface for medium and big screens (responsiveness).
+- Improve the styling.
 - Improve the section measurements and check the progress of it within time.
 - Add update measurements characteritic.
 - Allow to create new sports to measure.
