@@ -42,7 +42,22 @@ const Measurements = props => {
       },
     },
   } = props;
+  let today = '';
+  let yesterday = '';
+  let lastweek = '';
 
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in attributes) {
+    if (Object.prototype.valueOf.call(attributes, key)) {
+      if (key === 'today') {
+        today = attributes[key];
+      } else if (key === 'yesterday') {
+        yesterday = attributes[key];
+      } else if (key === 'lastweek') {
+        lastweek = attributes[key];
+      }
+    }
+  }
   return (
     <Homes>
       <Container>
@@ -58,7 +73,11 @@ const Measurements = props => {
                       <h6>Number of Measurements</h6>
                     </Col>
                     <Col xs={12}>
-                      <p> 3 times </p>
+                      <p>
+                        {today}
+                        {' '}
+                        times
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -70,7 +89,7 @@ const Measurements = props => {
 
         <Row>
           <Col xs={12}>
-            <Today>Number of Measurements</Today>
+            <Today>Yesterday</Today>
             <Measurement>
               <Row>
                 <Col xs={2} />
@@ -80,7 +99,11 @@ const Measurements = props => {
                       <h6>Number of Measurements</h6>
                     </Col>
                     <Col xs={12}>
-                      <p> 4 times </p>
+                      <p>
+                        {yesterday}
+                        {' '}
+                        times
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -102,7 +125,11 @@ const Measurements = props => {
                       <h6>Number of Measurements</h6>
                     </Col>
                     <Col xs={12}>
-                      <p> 25 times </p>
+                      <p>
+                        {lastweek}
+                        {' '}
+                        times
+                      </p>
                     </Col>
                   </Row>
                 </Col>
