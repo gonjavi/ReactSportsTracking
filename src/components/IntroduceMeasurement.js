@@ -119,7 +119,8 @@ const IntroduceMeasurement = props => {
         <h6>Add measurement</h6>
       </Space>
       <Row>
-        <Col xs={{ span: 3, offset: 3 }}>
+        <Col xs={2} sm={3} md={3} />
+        <Col xs={8} sm={6} md={6} className="text-center">
           <Circle>
             {seconds}
           </Circle>

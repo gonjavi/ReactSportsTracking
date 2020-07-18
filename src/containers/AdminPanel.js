@@ -13,11 +13,13 @@ const Homes = styled.nav`
   background-color: #f3f3f6;
 `;
 
-const Title = styled.h3`
+const Title = styled.div`
   color: #b7bcc8;
   font-size: 16px;
   padding: 15px;
   padding-bottom: 5px;
+  margin-left: 0;
+  margin.right: 0;
 `;
 
 const AdminPanel = props => {
@@ -42,8 +44,8 @@ const AdminPanel = props => {
     <Homes>
       <Container>
         <Row>
-          <Col xs={12}>
-            <Title>Admin Panel</Title>
+          <Col xs={12} md={10}>
+            <Title className="text-center">Admin Panel</Title>
           </Col>
         </Row>
         <Row className="text-center">
@@ -53,7 +55,9 @@ const AdminPanel = props => {
           <Col>Delete</Col>
         </Row>
       </Container>
-      {sportMeasure}
+      <Container>
+        {sportMeasure}
+      </Container>
     </Homes>
   );
 };
