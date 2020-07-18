@@ -1,9 +1,9 @@
 import React from 'react';
+import { render } from 'react-dom';
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import { Link, NavLink, BrowserRouter } from 'react-router-dom';
 import one from '../img/one1.png';
 import two from '../img/two2.png';
 import three from '../img/three3.png';
@@ -24,57 +24,55 @@ max-width: 100%;
 text-align: center;
 `;
 
-const Subtitle = styled.p`
-  color: white;
-`;
-
-const Footer = () => {
-  return (
-    <Footer1>
-      <BrowserRouter>
-        <Container>
-          <Row>
-            <Col>
-              <NavLink to="/measurements">
-                <img
-                  alt="one"
-                  width="40%"
-                  height="40%"
-                  src={one}
-                />
-              </NavLink>
-            </Col>
-            <Col>
-              <Link to="/home">
-                <img
-                  alt="one"
-                  width="40%"
-                  height="40%"
-                  src={two}
-                />
-              </Link>
-            </Col>
-            <Col>
-              <img
-                alt="one"
-                width="40%"
-                height="40%"
-                src={three}
-              />
-            </Col>
-            <Col>
-              <img
-                alt="one"
-                width="40%"
-                height="40%"
-                src={more}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </BrowserRouter>
-    </Footer1>
-  );
-};
+const Footer = () => (
+  <Footer1>
+    <Container>
+      <Row>
+        <Col>
+          <a href="/admin">
+            <img
+              alt="one"
+              width="40%"
+              height="40%"
+              src={one}
+            />
+          </a>
+        </Col>
+        <Col>
+          <a href="/home">
+            <img
+              alt="one"
+              width="40%"
+              height="40%"
+              src={two}
+            />
+          </a>
+        </Col>
+        <Col>
+          <a href="/measurements">
+            <img
+              alt="one"
+              width="40%"
+              height="40%"
+              src={three}
+            />
+          </a>
+        </Col>
+        <Col>
+          <a href="/">
+            <img
+              alt="one"
+              width="40%"
+              height="40%"
+              src={more}
+            />
+          </a>
+        </Col>
+      </Row>
+    </Container>
+  </Footer1>
+);
 
 export default Footer;
+
+render(<Footer />, document.getElementById('footer'));

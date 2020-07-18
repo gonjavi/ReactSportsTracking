@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import { CircularProgressbar } from 'react-circular-progressbar';
 import styled from 'styled-components';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -34,37 +33,16 @@ const Today = styled.h3`
   padding-bottom: 5px;
 `;
 
-const ProBar = styled.div`
-height: 60px;
-background-color: white;
-text-align: center;
-margin-left: auto;
-margin-right: auto;
-`;
-
 const Measurements = props => {
   const {
     sports: {
-      data,
+      progress: {
+        // eslint-disable-next-line no-unused-vars
+        attributes,
+      },
     },
   } = props;
 
-  const today = new Date();
-  const yesterday = new Date(today);
-  const thisWeek = new Date(today);
-
-  yesterday.setDate(yesterday.getDate() - 1);
-  thisWeek.setDate(thisWeek.getDate() - 8);
-
-  // today.toDateString();
-  yesterday.toDateString();
-
-  const sportMeasure = data.filter(
-    s => (s.attributes.date),
-  );
-  // console.log(today);
-  // console.log(yesterday);
-  console.log(sportMeasure)
   return (
     <Homes>
       <Container>
@@ -73,25 +51,18 @@ const Measurements = props => {
             <Today>Today</Today>
             <Measurement>
               <Row>
-                <Col xs={2}>
-                  <ProBar>
-                    <CircularProgressbar value={50} />
-                  </ProBar>
-                </Col>
+                <Col xs={2} />
                 <Col xs={7}>
                   <Row>
                     <Col xs={12}>
-                      <h6>Jul 13 2015</h6>
+                      <h6>Number of Measurements</h6>
                     </Col>
                     <Col xs={12}>
-                      <p>Total </p>
+                      <p> 3 times </p>
                     </Col>
                   </Row>
                 </Col>
-                <Col xs={3}>
-                  <h6>2,36</h6>
-                  <p>seg</p>
-                </Col>
+                <Col xs={3} />
               </Row>
             </Measurement>
           </Col>
@@ -99,28 +70,21 @@ const Measurements = props => {
 
         <Row>
           <Col xs={12}>
-            <Today>Yesterday</Today>
+            <Today>Number of Measurements</Today>
             <Measurement>
               <Row>
-                <Col xs={2}>
-                  <ProBar>
-                    <CircularProgressbar value={50} />
-                  </ProBar>
-                </Col>
+                <Col xs={2} />
                 <Col xs={7}>
                   <Row>
                     <Col xs={12}>
-                      <h6>Jul 13 2015</h6>
+                      <h6>Number of Measurements</h6>
                     </Col>
                     <Col xs={12}>
-                      <p>Total </p>
+                      <p> 4 times </p>
                     </Col>
                   </Row>
                 </Col>
-                <Col xs={3}>
-                  <h6>2,36</h6>
-                  <p>seg</p>
-                </Col>
+                <Col xs={3} />
               </Row>
             </Measurement>
           </Col>
@@ -131,25 +95,18 @@ const Measurements = props => {
             <Today>Last week</Today>
             <Measurement>
               <Row>
-                <Col xs={2}>
-                  <ProBar>
-                    <CircularProgressbar value={50} />
-                  </ProBar>
-                </Col>
+                <Col xs={2} />
                 <Col xs={7}>
                   <Row>
                     <Col xs={12}>
-                      <h6>Jul 13 2015</h6>
+                      <h6>Number of Measurements</h6>
                     </Col>
                     <Col xs={12}>
-                      <p>Total </p>
+                      <p> 25 times </p>
                     </Col>
                   </Row>
                 </Col>
-                <Col xs={3}>
-                  <h6>2,36</h6>
-                  <p>seg</p>
-                </Col>
+                <Col xs={3} />
               </Row>
             </Measurement>
           </Col>
@@ -168,7 +125,7 @@ Measurements.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  sports: state.data,
+  sports: state.progress,
 });
 
 export default connect(mapStateToProps)(Measurements);

@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchProducts , fetchProgress } from '../actions/index';
+import { fetchProducts, fetchProgress } from '../actions/index';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Home from '../components/Home';
@@ -43,7 +43,7 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Username} />
-            <Route exact path="/home" component={Home} />
+            <Route path="/home" component={Home} />
             <Route path="/measurements" component={Measurements} />
             <Route path="/measurement/:id" component={IntroduceMeasurement} />
             <Route path="/admin" component={AdminPanel} />

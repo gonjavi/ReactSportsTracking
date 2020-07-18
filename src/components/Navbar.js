@@ -17,12 +17,10 @@ font-size: 20px;
   
 `;
 
-const Navbar = () => {
-  return (
-    <Nav>
-      <p>Track.it</p>
-    </Nav>
-  );
-};
+const Navbar = () => (
+  <Nav>
+    <p>Track.it</p>
+  </Nav>
+);
 
 export default Navbar;

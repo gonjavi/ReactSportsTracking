@@ -1,6 +1,19 @@
-html {
+html,
+body {
   height: 100%;
 }
+
+#root {
+  min-height: 100%;
+  margin-bottom: -330px;
+  position: relative;
+}
+
+#footer {
+  height: 330px;
+  position: relative;
+}
+
 body {
   margin: 0;
   background-color: #fdfdfd;
@@ -20,8 +33,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
- 
 }
 
 code {
@@ -34,13 +45,41 @@ code {
     monospace;
 }
 
-h1, p {
-  font-family: Helvetica Neue Light;
+.CircularProgressbar {
+  width: 70%;
+  height: 140%;
+}
+
+@media only screen and (max-width: 991px) {
+  .CircularProgressbar {
+    width: 70%;
+    height: 170%;
+  }
+
+  .nav.sc-Axhel.irvNbp {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  div.sport.col-sm-6.col-6 {
+    padding: 0;
+  }
+
+  input {
+    width: 160%;
+  }
+}
+
+h1,
+p {
+  font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 div.col {
   padding: 0;
 }
+
 div.container {
   padding: 0;
 }
@@ -50,4 +89,3 @@ div.container {
   padding-top: 18px;
   padding-left: 20px;
 }
-

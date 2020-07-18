@@ -39,7 +39,7 @@ const addUsername = username => ({
 function fetchProducts() {
   return dispatch => {
     dispatch(fetchProductsPending());
-    fetch('http://localhost:3001/api/v1/measurements.json',
+    fetch('https://trackingapi-gon.herokuapp.com/api/v1/measurements.json',
       {
         headers: {
           'content-type': 'application/json',

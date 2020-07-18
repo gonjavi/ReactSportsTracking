@@ -15,3 +15,5 @@ export default function userReducer(state = initialState, action) {
       return state;
   }
 }
+
+export const getProgress = state => state.progress;

@@ -89,7 +89,7 @@ const IntroduceMeasurement = props => {
   useEffect(() => {
     if (measurement) {
       axios.post(
-        'http://localhost:3001/api/v1/measurements',
+        'https://trackingapi-gon.herokuapp.com/api/v1/measurements',
         {
           time: formatTime(seconds),
           date: Date(),

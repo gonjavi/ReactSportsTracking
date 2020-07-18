@@ -37,11 +37,11 @@ const Username = props => {
     <Container>
       <Row>
         <Col xs={12}>
-          <Date> 7 July 2020 </Date>
+          <Date> Sports Tracking </Date>
         </Col>
       </Row>
       <Row>
-        <Col xs={{ span: 3, offset: 3 }}>
+        <Col xs={{ span: 4, offset: 3 }}>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">
               Type your username:
