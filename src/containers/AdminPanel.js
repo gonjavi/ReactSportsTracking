@@ -7,14 +7,13 @@ import Container from 'react-bootstrap/Container';
 import styled from 'styled-components';
 import MeasurementAd from '../components/MeasurementAd';
 
-const Homes = styled.nav`
-  
+const Homes = styled.nav`  
   font-family: Helvetica-Neue-Light;
   background-color: #f3f3f6;
 `;
 
 const Title = styled.div`
-  color: #b7bcc8;
+  color: #848996;
   font-size: 16px;
   padding: 15px;
   padding-bottom: 5px;

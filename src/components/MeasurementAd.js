@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Block = styled.div`
   height: 60px;
-  color: #b7bcc8;
+  color: #999da8;
   background-color: white;
   margin: 5px;
   margin-bottom: 10px;

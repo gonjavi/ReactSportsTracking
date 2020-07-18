@@ -20,14 +20,14 @@ const Measurement = styled.div`
   background-color: white;
   text-align: center;
   h6 {
-    color: #949ca9;
+    color: #848996;
   }
   p {
-    color: #dbdde3;
+    color: #787b87;
   }
 `;
 const Today = styled.h3`
-  color: #b7bcc8;
+  color: #999da8;
   font-size: 16px;
   padding: 15px;
   padding-bottom: 5px;
