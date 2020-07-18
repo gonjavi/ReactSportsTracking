@@ -56,6 +56,10 @@ Add the following characteristics:
 - Add update measurements characteritic.
 - Allow to create new sports to measure.
 
+## Design
+
+Design idea by Gregoire Vella on Behance
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
