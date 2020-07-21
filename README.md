@@ -1,5 +1,6 @@
 ## React-Redux Capstone Project
-This is part of the front-end part of the sports tracking mobile app capstone project built together with the [Ruby on Rails Api](https://github.com/gonjavi/railsSportsTrack).
+
+This is a front-end sport tracking mobile app, which is useful to track the date, and duration time of any of these sports (Jogging, Cycling, Swimming, Weight lifting, Treadmill, Walking). This project was built using React and Redux.
 
 ![screenshot](./src/img/screenshot1.png)  
 
