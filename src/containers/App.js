@@ -21,8 +21,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchProducts } = this.props;
-    const { fetchProgress } = this.props;
+    const { fetchProducts, fetchProgress } = this.props;
     fetchProducts();
     fetchProgress();
   }

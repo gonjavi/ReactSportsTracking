@@ -39,13 +39,13 @@ const MeasurementAd = props => {
   }
 
   const date1 = new Date(date);
-  const y = date1.getFullYear();
+  const year = date1.getFullYear();
   const month = date1.getMonth() + 1;
   const day = date1.getDate();
 
   const a = time.split(':');
-  const m = a[0];
-  const s = a[1];
+  const min = a[0];
+  const sec = a[1];
 
   function deleteMeasurement() {
     setRemove(true);
@@ -70,12 +70,12 @@ const MeasurementAd = props => {
             -
             {month}
             -
-            {y}
+            {year}
           </Col>
           <Col xs={2}>
-            {m}
+            {min}
             :
-            {s}
+            {sec}
           </Col>
           <Col className="text-center">
             <button type="button" onClick={deleteMeasurement}>Delete</button>

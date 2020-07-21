@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
+import formatTime from '../utils/constants';
 import {
   Circle,
   Space,
@@ -34,16 +35,6 @@ const IntroduceMeasurement = props => {
 
   function saveToApi() {
     setMeasurement(true);
-  }
-
-  function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
-    return `${minutes}:${seconds}`;
   }
 
   useEffect(() => {
