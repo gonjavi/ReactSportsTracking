@@ -3,7 +3,7 @@ import formatTime from '../utils/constants';
 
 const postMeasurement = (id, seconds) => {
   axios.post(
-    'http://localhost:3001/api/v1/measurements',
+    'https://trackingapi-gon.herokuapp.com/api/v1/measurements',
     {
       time: formatTime(seconds),
       date: Date(),

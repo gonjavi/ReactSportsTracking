@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const deleteMeasurementApi = id => {
-  axios.delete(`http://localhost:3001/api/v1/measurements/${id}`)
+  axios.delete(`https://trackingapi-gon.herokuapp.com/api/v1/measurements/${id}`)
     .then(res => {
       if (res.error) {
         throw (res.error);
