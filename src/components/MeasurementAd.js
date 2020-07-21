@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import axios from 'axios';
 import Block from '../styles/measurementAd';
 import sportSelector from '../utils/sportSelector';
+import timeExtractor from '../utils/timeExtractor';
+import deleteMeasurementApi from '../actions/delete';
 
 const MeasurementAd = props => {
   const [remove, setRemove] = useState(false);
@@ -17,27 +18,19 @@ const MeasurementAd = props => {
   } = props;
   const sportName = sportSelector(sport);
 
-  const date1 = new Date(date);
-  const year = date1.getFullYear();
-  const month = date1.getMonth() + 1;
-  const day = date1.getDate();
-
-  const a = time.split(':');
-  const min = a[0];
-  const sec = a[1];
+  const {
+    year,
+    month,
+    day,
+    min,
+    sec,
+  } = timeExtractor(date, time);
 
   function deleteMeasurement() {
     setRemove(true);
   }
   useEffect(() => () => {
-    axios.delete(`http://localhost:3001/api/v1/measurements/${id}`)
-      .then(res => {
-        if (res.error) {
-          throw (res.error);
-        }
-        window.location.reload(false);
-        return res;
-      }).catch(error => error);
+    deleteMeasurementApi(id);
   }, [remove, id]);
   return (
     <Block>

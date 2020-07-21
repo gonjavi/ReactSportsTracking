@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import { postMeasurement } from '../actions/index';
+import postMeasurement from '../actions/post';
 
 import {
   Circle,
