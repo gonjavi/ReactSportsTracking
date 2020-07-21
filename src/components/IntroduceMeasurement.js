@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import axios from 'axios';
-import formatTime from '../utils/constants';
+import { postMeasurement } from '../actions/index';
+
 import {
   Circle,
   Space,
@@ -51,28 +51,7 @@ const IntroduceMeasurement = props => {
 
   useEffect(() => {
     if (measurement) {
-      axios.post(
-        'http://localhost:3001/api/v1/measurements',
-        {
-          time: formatTime(seconds),
-          date: Date(),
-          sport_id: id,
-        },
-        {
-          headers: {
-            'content-type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH',
-          },
-        },
-      )
-        .then(res => {
-          if (res.error) {
-            throw (res.error);
-          }
-          window.location.reload(false);
-          return res;
-        }).catch(error => error);
+      postMeasurement(id, seconds);
     }
   }, [measurement, seconds, id]);
 
