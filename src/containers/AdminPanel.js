@@ -4,22 +4,11 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import styled from 'styled-components';
 import MeasurementAd from '../components/MeasurementAd';
-
-const Homes = styled.nav`  
-  font-family: Helvetica-Neue-Light;
-  background-color: #f3f3f6;
-`;
-
-const Title = styled.div`
-  color: #848996;
-  font-size: 16px;
-  padding: 15px;
-  padding-bottom: 5px;
-  margin-left: 0;
-  margin.right: 0;
-`;
+import {
+  Homes,
+  Title,
+} from '../styles/adminPanel';
 
 const AdminPanel = props => {
   const {

@@ -4,34 +4,12 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import styled from 'styled-components';
 import 'react-circular-progressbar/dist/styles.css';
-
-const Homes = styled.nav`
-  height: 700px;
-  font-family: Helvetica-Neue-Light;
-  background-color: #f3f3f6;
-`;
-
-const Measurement = styled.div`
-  width: 100%;
-  height: 83px;
-  padding: 20px;
-  background-color: white;
-  text-align: center;
-  h6 {
-    color: #848996;
-  }
-  p {
-    color: #787b87;
-  }
-`;
-const Today = styled.h3`
-  color: #999da8;
-  font-size: 16px;
-  padding: 15px;
-  padding-bottom: 5px;
-`;
+import {
+  Homes,
+  Measurement,
+  Today,
+} from '../styles/measurements';
 
 const Measurements = props => {
   const {

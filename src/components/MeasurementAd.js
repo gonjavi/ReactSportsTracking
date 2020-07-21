@@ -3,16 +3,9 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import styled from 'styled-components';
 import axios from 'axios';
+import Block from '../styles/measurementAd';
 
-const Block = styled.div`
-  height: 60px;
-  color: #999da8;
-  background-color: white;
-  margin: 5px;
-  margin-bottom: 10px;
-`;
 const MeasurementAd = props => {
   const [remove, setRemove] = useState(false);
   const {
@@ -44,19 +37,21 @@ const MeasurementAd = props => {
     default:
       sportName = '';
   }
-  const d = new Date(time);
+
   const date1 = new Date(date);
   const y = date1.getFullYear();
   const month = date1.getMonth() + 1;
   const day = date1.getDate();
-  const m = d.getMinutes();
-  const s = d.getSeconds();
+
+  const a = time.split(':');
+  const m = a[0];
+  const s = a[1];
 
   function deleteMeasurement() {
     setRemove(true);
   }
   useEffect(() => () => {
-    axios.delete(`https://trackingapi-gon.herokuapp.com/api/v1/measurements/${id}`)
+    axios.delete(`http://localhost:3001/api/v1/measurements/${id}`)
       .then(res => {
         if (res.error) {
           throw (res.error);

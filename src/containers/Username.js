@@ -5,17 +5,9 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import styled from 'styled-components';
 import { addUsername } from '../actions/index';
 import 'react-circular-progressbar/dist/styles.css';
-
-const Date = styled.div`
-  width: 100%;
-  height: 150px;
-  padding: 20px;
-  background-color: white;
-  text-align: center;
-`;
+import Date from '../styles/username';
 
 const Username = props => {
   const [username, setUsername] = useState('');

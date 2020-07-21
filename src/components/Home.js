@@ -4,49 +4,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { CircularProgressbar } from 'react-circular-progressbar';
-import styled from 'styled-components';
 import 'react-circular-progressbar/dist/styles.css';
-
-const Homes = styled.nav`
-  height: 700px;
-  font-family: Helvetica Neue Light;
-  background-color: #f3f3f6;
-`;
-const Date = styled.div`
-  width: 100%;
-  height: 70px;
-  padding: 20px;
-  background-color: white;
-  text-align: center;
-  color: #dbdde3;
-`;
-const Progress = styled.div`
-  width: 100%;
-  height: 130px;
-  padding: 20px;
-  background-color: white;
-  text-align: center;
-`;
-const ProBar = styled.div`
-width: 60%;
-height: 40px;
-background-color: white;
-text-align: center;
-margin-left: auto;
-margin-right: auto;
-`;
-const Sport = styled.nav`
-  display: block;
-  width: 80%;
-  height: 80px;
-  font-family: Helvetica Neue Light;
-  background-color: #fdfdfd;
-  color: #afb0b5;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: auto;
-margin-right: auto;
-`;
+import {
+  Homes,
+  Date,
+  Progress,
+  ProBar,
+  Sport,
+} from '../styles/home';
 
 const Home = () => (
   <Homes>
