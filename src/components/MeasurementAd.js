@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import Block from '../styles/measurementAd';
+import sportSelector from '../utils/sportSelector';
 
 const MeasurementAd = props => {
   const [remove, setRemove] = useState(false);
@@ -14,29 +15,7 @@ const MeasurementAd = props => {
     date,
     id,
   } = props;
-  let sportName;
-  switch (sport) {
-    case 1:
-      sportName = 'Cycling';
-      break;
-    case 2:
-      sportName = 'Jogging';
-      break;
-    case 3:
-      sportName = 'Swimming';
-      break;
-    case 4:
-      sportName = 'Walking';
-      break;
-    case 5:
-      sportName = 'Weight Lifting';
-      break;
-    case 6:
-      sportName = 'Treadmill-workout';
-      break;
-    default:
-      sportName = '';
-  }
+  const sportName = sportSelector(sport);
 
   const date1 = new Date(date);
   const year = date1.getFullYear();
