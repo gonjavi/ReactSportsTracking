@@ -20,7 +20,7 @@ There is a measurement view to display the progress of it within time (today, ye
 
 ![screenshot](./src/img/screenshot2.png)
 
-
+![screenshot](./src/img/Screenshot3.png)
 
 ### Prerequisites
 - npm 6.14.5
@@ -30,7 +30,7 @@ There is a measurement view to display the progress of it within time (today, ye
 
 - Run $npm install   -to install all dependencies from a package.json file
 - Run on the command line: $npm start
-- You will see the project on broswer
+- You will see the project on browser
 - [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
@@ -66,10 +66,10 @@ You will also see any lint errors in the console.
 
 Add the following characteristics:
 
-- Improve the styling.
+- Improve styling.
 - Improve the section measurements and check the progress of it within time.
 - Add update measurement characteristics. 
-- Allow to create new sports to measure.
+- Allow creating new sports to measure.
 
 ## Design
 
