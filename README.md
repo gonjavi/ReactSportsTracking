@@ -4,23 +4,15 @@ This is a front-end sport tracking mobile app, which is useful to track the date
 
 It has a basic sign in to save the name in the redux store.
 
-This is a mobile app, although it can be seen on big screens, the main target was for a mobile phone as it was requested, it has some responsiveness but it will be improved in a couple of weeks.
+This is a mobile app, although it can be seen on big screens, the main target was for a mobile phone as it was requested, it has some responsiveness but it will be improved in a couple of weeks.The 3 progress circle bars from the home view are not set up with the pŕogress yet, at the moment it is only displaying a fixed percentage. It will be updated to display the values (today, yesterday, last week). On the other side, there are only 6 fixed sports to be measured.
 
-The 3 progress circle bars from the home view are not set up with the pŕogress yet, at the moment it is only displaying a fixed percentage. It will be updated to display the values (today, yesterday, last week). On the other side, there are only 6 fixed sports to be measured.
-
-The user can click to the sport and it redirects to introduce the measurement (date and time) using the timer, to be registered to the API.
-
-This app has an admin panel to load all the measurements registered in the backend and fetched to the redux store. The user can delete the measurements.
-
-There is a measurement view to display the progress of it within time (today, yesterday, last week). It displays the number of measurements registered in a day.
+The user can click to the sport and it redirects to introduce the measurement (date and time) using the timer, to be registered to the API. This app has an admin panel to load all the measurements registered in the backend and fetched to the redux store, and the user can delete the measurements. There is a measurement view to display the progress of it within time (today, yesterday, last week). It displays the number of measurements registered in a day.
 
 
 
 ![screenshot](./src/img/screenshot1.png)  
 
 ![screenshot](./src/img/screenshot2.png)
-
-![screenshot](./src/img/Screenshot3.png)
 
 ### Prerequisites
 - npm 6.14.5
