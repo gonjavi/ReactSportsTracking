@@ -58,7 +58,7 @@ You will also see any lint errors in the console.
 
 Add the following characteristics:
 
-- Improve styling.
+- Improve respopnsive styling 
 - Improve the section measurements and check the progress of it within time.
 - Add update measurement characteristics. 
 - Allow creating new sports to measure.
